@@ -1,0 +1,15 @@
+{% extends "benchmarking/panel-template-wo.html" %}
+{% load static %}
+{% block panel-title %}Input your data{% endblock %}
+{% block panel-sub-title %}
+  Please make sure your 2020 submission ID and participation code match the ones provided in the email sent to you by the organization.
+  You will not be able to submit your input if this information is incorrect.
+  Drag and drop your completed template file in box below to encrypt and include your submission in the aggregate data.
+  All selection fields below have search functionality.
+{% endblock %}
+
+{% block page-content %}
+{% include "benchmarking/input-panel-text.html" %}
+{% endblock %}
+
+

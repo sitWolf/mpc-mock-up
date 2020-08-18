@@ -1,0 +1,11 @@
+{% extends "benchmarking/input-panel-w.html" %}
+{% load static %}
+{% block panel-title %}Input your data{% endblock %}
+{% block panel-sub-title %}
+  Please make sure your 2020 submission ID and participation code match the ones provided in the email sent to you by the organization.
+  You will not be able to submit your input if this information is incorrect.
+  Drag and drop your completed template file in box below to encrypt and include your submission in the aggregate data.
+  All selection fields below have search functionality.
+  <div class="alert alert-info"><i class="fa fa-info-circle"></i> As shown in the illustration, this part runs in your web browser. At this point, when you enter your data your files do not leave your machine.</div>
+  <div class="alert alert-info"><i class="fa fa-info-circle"></i> Your submission ID and participation code are only used to authenticate your submission (comparable to username and password). Without this information it is not possible to submit input data. The other input fields (location, channel, etc.) make part of your input data.</div>
+{% endblock %}

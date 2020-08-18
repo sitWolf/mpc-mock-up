@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load form_manipulation_filters %}
+{% load static %}
+
+{% block title %}{% endblock %}
+{% block page-title %}Resource Management Tool{% endblock %}
+{% block page-subtitle %}Breakage Management Application{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel">
+      <div class="panel-body">
+        <h2>{% block form-title %}{% endblock %}</h2>
+        <div class="col-md-12">
+          <form class="form-horizontal" id="intigator-form-breakages" action="" method="POST">{% csrf_token %}
+            {% for hidden_field in form.hidden_fields %}
+              {{ hidden_field }}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+              <div class="form-group">
+                {{ field.label_tag }}
+                {{ field|addclass:'form-control' }}
+                {% if field.help_text %}
+                  <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+              </div>
+            {% endfor %}
+            <button type="submit" class = "btn btn-primary" id ="btn-sw-confirmation" onclick="return submitdata();">Checkout</button>
+            <button class = "btn btn-default">
+              <a href="{% block back_url %}{% endblock %}">back to the list</a>
+            </button>
+          </form>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

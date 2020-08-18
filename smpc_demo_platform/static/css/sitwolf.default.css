@@ -1,0 +1,238 @@
+/**
+ * sitwolf.default.css (v0.0.1) - Default
+ * Copyright (c) 2019 Masud Petronia
+ *
+ * Licensed under MIT.
+ *
+ * @Masud Petronia <info@sitwolf.com>
+ */
+.total-breakages .count {
+  margin-bottom: 35px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.total-breakages .number {
+  display: block;
+  margin: 0 auto;
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1;
+  color: #00AAFF;
+}
+
+video {
+  width: 100%    !important;
+  height: 100%   !important;
+
+  max-height: 85vh;
+  max-width: 100vh; /* 16/9 * 90 = 160 */
+}
+
+.centered-video {
+    display: block;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.video-box-text {
+  width: 100%    !important;
+  max-height: 100vh   !important;
+  overflow: auto;
+}
+
+/*So that main adjusts to collapsing boxes*/
+.main{
+  min-height:90vh;
+  padding: 0!important;
+}
+
+.main-content{
+  min-height:95vh;
+}
+
+#demo-intro{
+  padding:10px;
+}
+
+.increased-icon-size{
+  font-size:250%;
+}
+
+.tiny-font-size{
+  font-size:60%;
+  text-align: center;
+}
+
+.increased-font-size{
+  font-size:150%;
+}
+
+.center-it{
+  text-align: center;
+}
+
+.centered-image-50{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.centered-image-25{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+.centered-image-100{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.navbar-default,
+.layout-topnav .top-bar {
+  /*background: #0bc3c3;*/
+  background:#00AAFF;
+}
+
+.cell-width{
+        display:inline-block;
+        width: 8em;
+        font-weight: bolder;
+        text-align: center
+}
+
+td[id^="sjs-A"]{
+  font-weight: bold;
+  background-color: #f5f8fc;
+  font-size: large;
+  word-wrap:break-word;
+  text-transform: uppercase;
+}
+
+td[id^="sjs-B"] {
+  width: 30%;
+  height: 3em;
+}
+
+/*td[id^="sjs-C"] {*/
+/*  width: 40%;*/
+/*}*/
+
+td[id^="sjs-B"]{
+  text-transform: capitalize;
+}
+
+td[id^="sjs-A"],
+td[id^="sjs-B"],
+td[id^="sjs-C"]{
+  padding-left:10px;
+  padding-right:10px;
+  margin: auto;
+}
+
+tr,
+td[id^="sjs-A"],
+td[id^="sjs-B"]{
+  text-align: right;
+  vertical-align: middle!important;
+}
+
+/*This is included because the JS script removes (benchmarking-home-base.html) first cell and thus, bottom and top of table line is not consistent*/
+.table > tbody > tr > td{
+  border-bottom: 1px solid #ddd;
+}
+
+table[id="sheet-9"] td[id="sjs-A2"]{
+  background-color: transparent!important;
+  border-collapse: collapse!important;
+}
+
+table[id="sheet-9"] > tbody > tr > td > select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+
+/* For IE10 */
+table[id="sheet-9"] > tbody > tr > td > select::-ms-expand {
+  display: none;
+}
+
+
+table[id="sheet-9"] > tbody > tr > td[id^="sjs-A"] {
+  max-width: 50px;
+  background-color: transparent;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  transform: rotate(90deg);
+  white-space: nowrap;
+  text-align:center!important;
+  vertical-align:middle !important;
+}
+
+#toast-container.toast-top-center > div{
+  width: 40% !important;
+}
+
+#user-data-input-sheet-sum > table > tbody > tr > td[id^=sjs-A]{
+  width:50% !important;
+}
+
+/*li[class^="select"],*/
+
+div[class="user-input"] .form-control{
+  background-color: #f7ff00;
+}
+
+.vrt-header{
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  transform: rotate(90deg);
+  white-space: nowrap;
+  text-align:right !important;
+  vertical-align:middle !important;
+  /*padding:50px !important;*/
+  max-width: 10px!important;
+  /*position: relative;*/
+  /*bottom: 30px;*/
+  /*right: 57px;*/
+}
+
+table[id="sheet-9"] > tbody > tr:first-child{
+  height: 250px;
+}
+@media only screen and (min-width: 480px) {
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    padding-top: 33%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    padding-top: 42%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  max-height: 85vh;
+  max-width: 100vh; /* 16/9 * 90 = 160 */
+}

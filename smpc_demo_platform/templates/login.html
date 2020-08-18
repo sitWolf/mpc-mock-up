@@ -1,0 +1,45 @@
+{% extends "base_main.html" %}
+{% load static %}
+
+{% block html_class %}class="fullscreen-bg"{% endblock html_class %}
+
+{% block main_content %}
+
+  <div id="wrapper">
+			<div class="vertical-align-wrap">
+				<div class="vertical-align-middle">
+          <div class="col-md-10 col-md-offset-1 center-it">
+            <p class="lead"><h1>Login MPC demonstration tool</h1></p>
+            <br>
+          </div>
+
+					<div class="col-md-6 col-md-offset-3">
+						<div class="left">
+							<div class="content">
+								<form class="form-auth-small" action="" method="POST">{% csrf_token %}
+
+                  {{ form.non_field_errors }}
+                    {% for field in form %}
+
+                    <div class="form-group">
+                      <label for="{{ field.id_for_label }}"  class="control-label sr-only"></label>
+                      <input autofocus="" name="{{ field.html_name}}" required="" id="{{ field.id_for_label }}" class="form-control" placeholder="{{ field.html_name }}" type="{{ field.field.widget.input_type }}">
+                    </div>
+                  {% endfor %}
+
+									<div class="form-group clearfix">
+										<span class="helper-text element-right">Don't have an account? Apply for one <a>here</a></span>
+									</div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+                  <br>
+									<div class="bottom center-it">
+										<span class="helper-text"><i class="fa fa-lock"></i> <a href="page-forgot-password.html">Forgot password?</a></span>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock main_content %}

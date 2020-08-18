@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+{% load static %}
+{% block breadcrumb %}/ Benchmarking{% endblock breadcrumb %}
+
+{% block page-title %}PEBE - Multi party Computation Benchmarking Application{% endblock %}
+{% block page-subtitle %}Supply Chain Distribution Center Data Submission{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'vendor/select2/css/select2.min.css' %}">
+<link rel="stylesheet" href="{% static 'vendor/dropify/css/dropify.min.css' %}">
+<link rel="stylesheet" href="{% static 'vendor/toastr/toastr.min.css' %}">
+{% endblock %}
+
+{% block content %}
+{% endblock%}
+
+{% block js_script %}
+<script src="{% static 'vendor/select2/js/select2.min.js' %}"></script>
+<script src="{% static 'vendor/dropify/js/dropify.min.js' %}"></script>
+<script src="{% static 'vendor/sheet-js/js/xlsx.full.min.js' %}"></script>
+<script src="{% static 'vendor/toastr/toastr.min.js' %}"></script>
+<script src="{% static 'vendor/datatables/js-bootstrap/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'vendor/datatables-colreorder/dataTables.colReorder.js' %}"></script>
+<script src="{% static 'vendor/datatables-tabletools/js/dataTables.tableTools.js' %}"></script>
+<script src="{% static 'vendor/sweetalert2/sweetalert2.js' %}"></script>
+{% block js_script_completed_demo %}{% endblock %}
+<script>
+		$(function()
+		{
+			$('.select-basic').select2();
+			$('.select-multiple-basic').select2();
+			{#$('table[id="sheet-9"] > tbody > tr > td > select').select2();#}
+			$('#select-country').select2(
+			{
+				placeholder: 'Select DC location',
+				allowClear: true
+			});
+      $('#select-diversity').select2(
+			{
+				placeholder: 'Select product diversity range',
+				allowClear: true
+			});
+      $('#select-market').select2(
+			{
+				placeholder: 'Select market',
+				allowClear: true
+			});
+			$('#select-channel').select2(
+			{
+				placeholder: ' Select channel',
+			});
+      $('#select-goods-distributed').select2(
+			{
+				placeholder: ' Select good(s) distributed'
+			});
+      $('#select-technologies').select2(
+			{
+				placeholder: ' Select'
+			});
+      $('#select-machines').select2(
+			{
+				placeholder: ' Select'
+			});
+		});
+    $(function()
+		{
+			$('.dropify').dropify();
+			var drEvent = $('#dropify-event').dropify();
+			drEvent.on('dropify.beforeClear', function(event, element)
+			{
+				return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+			});
+			drEvent.on('dropify.afterClear', function(event, element)
+			{
+				alert('File deleted');
+			});
+			$('.dropify-custom').dropify(
+			{
+				messages:
+				{
+					default: '<h4>Completed Excel template only</h4>Drag and drop your completed template file here in this box or click here to select file',
+					error: 'Incorrect file format'
+				}
+			});
+		});
+
+    //below function to toggle content to be reviewed (review-data-panel)
+		$(function()
+		{
+			$('.project-accordion [data-toggle="collapse"]').on('click', function()
+			{
+				$(this).find('.toggle-icon').toggleClass('fa-caret-up fa-caret-down ');
+			});
+		});
+
+    // sheet JS function to read user input from excel template file.
+    // IMPORTANT: When you change the content of the excel file. Upload it, the function below will replace existing table with new table. Copy outer html of new table from browser and paste in corresponding table html (i.e. benchmarking/table/<name>.html)
+    // WARNING: PERFORM above steps! The script does not check whether fields correspond!
+		$('#excel-input-data').change(function(e){
+		  var reader = new FileReader();
+		  reader.readAsArrayBuffer(e.target.files[0]);
+		  reader.onload = function (e){
+		    var data = new Uint8Array(reader.result);
+        var wb = XLSX.read(data,{type:'array'});
+        // static quick and dirty method. Make this dynamic.
+        var htmlStr_1 = XLSX.write(wb,{sheet:'1',type:'binary',bookType:'html'});
+        var htmlStr_2 = XLSX.write(wb,{sheet:'2',type:'binary',bookType:'html'});
+        var htmlStr_3 = XLSX.write(wb,{sheet:'3',type:'binary',bookType:'html'});
+        var htmlStr_4 = XLSX.write(wb,{sheet:'4',type:'binary',bookType:'html'});
+        var htmlStr_5 = XLSX.write(wb,{sheet:'5',type:'binary',bookType:'html'});
+        var htmlStr_6 = XLSX.write(wb,{sheet:'6',type:'binary',bookType:'html'});
+        var htmlStr_7 = XLSX.write(wb,{sheet:'7',type:'binary',bookType:'html'});
+        var htmlStr_8 = XLSX.write(wb,{sheet:'8',type:'binary',bookType:'html'});
+        var htmlStr_9 = XLSX.write(wb,{sheet:'9',type:'binary',bookType:'html'});
+        var htmlStr_10 = XLSX.write(wb,{sheet:'10',type:'binary',bookType:'html'});
+        var htmlStr_sum = XLSX.write(wb,{sheet:'sum',type:'binary',bookType:'html'});
+
+
+        {# Add table class #}
+        var tableAttributes = "<table class='table table-hover' id='sheet-1'>";
+        var htmlStr_1 = htmlStr_1.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table table-hover' id='sheet-2'>";
+        var htmlStr_2 = htmlStr_2.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table table-hover' id='sheet-3'>";
+        var htmlStr_3 = htmlStr_3.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table table-hover' id='sheet-4'>";
+        var htmlStr_4 = htmlStr_4.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table table-hover' id='sheet-5'>";
+        var htmlStr_5 = htmlStr_5.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table table-hover' id='sheet-6'>";
+        var htmlStr_6 = htmlStr_6.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table table-hover' id='sheet-7'>";
+        var htmlStr_7 = htmlStr_7.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table table-hover' id='sheet-8'>";
+        var htmlStr_8 = htmlStr_8.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table dataTable table-bordered' id='sheet-9'>";
+        var htmlStr_9 = htmlStr_9.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table table-hover' id='sheet-10'>";
+        var htmlStr_10 = htmlStr_10.replace("<table>",tableAttributes);
+        var tableAttributes = "<table class='table table-bordered' id='sheet-sum'>";
+        var htmlStr_sum = htmlStr_sum.replace("<table>",tableAttributes);
+        {# replace existing table with new table with new content from excel template. Note: this way each item user inserts new template, it overwrites old input #}
+        $.when($('#user-data-input-sheet-sum')[0].innerHTML = htmlStr_sum).then(
+         function (a) {
+           $('#user-data-input-sheet-sum > table').each(function(){
+             return;
+           });
+         }
+        );
+
+        $.when($('#user-data-input-sheet-1')[0].innerHTML = htmlStr_1).then(
+         function (a) {
+           $('#user-data-input-sheet-1 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           $('#user-data-input-sheet-1 > table').each(function(){
+             // include in column C cells an input cell
+             $(this).find('td[id^="sjs-C"]').each(function(){
+               var cellValue = this.innerHTML;
+               this.innerHTML = "<input class=\"form-control\" value=\"" + cellValue + "\">"})
+           });
+         }
+        );
+        $.when($('#user-data-input-sheet-2')[0].innerHTML = htmlStr_2).then(
+         function (a) {
+           $('#user-data-input-sheet-2 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           $('#user-data-input-sheet-2 > table').each(function(){
+             // include in column C cells an input cell
+             $(this).find('td[id^="sjs-C"]').each(function(){
+               var cellValue = this.innerHTML;
+               this.innerHTML = "<input class=\"form-control\" value=\"" + cellValue + "\">"})
+           });
+         }
+        );
+        $.when($('#user-data-input-sheet-3')[0].innerHTML = htmlStr_3).then(
+         function (a) {
+           $('#user-data-input-sheet-3 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           $('#user-data-input-sheet-3 > table').each(function(){
+             // include in column C cells an input cell
+             $(this).find('td[id^="sjs-C"]').each(function(){
+               var cellValue = this.innerHTML;
+               this.innerHTML = "<input class=\"form-control\" value=\"" + cellValue + "\">"})
+           });
+         }
+        );
+        $.when($('#user-data-input-sheet-4')[0].innerHTML = htmlStr_4).then(
+         function (a) {
+           $('#user-data-input-sheet-4 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           $('#user-data-input-sheet-4 > table').each(function(){
+             // include in column C cells an input cell
+             $(this).find('td[id^="sjs-C"]').each(function(){
+               var cellValue = this.innerHTML;
+               this.innerHTML = "<input class=\"form-control\" value=\"" + cellValue + "\">"})
+           });
+         }
+        );
+        $.when($('#user-data-input-sheet-5')[0].innerHTML = htmlStr_5).then(
+         function (a) {
+           $('#user-data-input-sheet-5 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           $('#user-data-input-sheet-5 > table').each(function(){
+             // include in column C cells an input cell
+             $(this).find('td[id^="sjs-C"]').each(function(){
+               var cellValue = this.innerHTML;
+               this.innerHTML = "<input class=\"form-control\" value=\"" + cellValue + "\">"})
+           });
+         }
+        );
+        $.when($('#user-data-input-sheet-6')[0].innerHTML = htmlStr_6).then(
+         function (a) {
+           $('#user-data-input-sheet-6 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           $('#user-data-input-sheet-6 > table').each(function(){
+             // include in column C cells an input cell
+             $(this).find('td[id^="sjs-C"]').each(function(){
+               var cellValue = this.innerHTML;
+               this.innerHTML = "<input class=\"form-control\" value=\"" + cellValue + "\">"})
+           });
+         }
+        );
+        $.when($('#user-data-input-sheet-7')[0].innerHTML = htmlStr_7).then(
+         function (a) {
+           $('#user-data-input-sheet-7 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           $('#user-data-input-sheet-7 > table').each(function(){
+             // include in column C cells an input cell
+             $(this).find('td[id^="sjs-C"]').each(function(){
+               var cellValue = this.innerHTML;
+               this.innerHTML = "<input class=\"form-control\" value=\"" + cellValue + "\">"})
+           });
+         }
+        );
+        $.when($('#user-data-input-sheet-8')[0].innerHTML = htmlStr_8).then(
+         function (a) {
+           $('#user-data-input-sheet-8 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           $('#user-data-input-sheet-8 > table').each(function(){
+             // include in column C cells an input cell
+             $(this).find('td[id^="sjs-C"]').each(function(){
+               var cellValue = this.innerHTML;
+               this.innerHTML = "<input class=\"form-control\" value=\"" + cellValue + "\">"})
+           });
+         }
+        );
+        {#$('#user-data-input-sheet-9')[0].innerHTML = htmlStr_9#}
+        $.when($('#user-data-input-sheet-9')[0].innerHTML = htmlStr_9).then(
+         function (a) {
+           $('#user-data-input-sheet-9 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           var aa = $("table[id='sheet-9']");
+           var bb = aa.find("tr:first");
+           var cc = bb.find("td");
+
+           bb.each(function(){
+             // include in column C cells an input cell
+             $(this).find('td').each(function(){
+               var cellValue = this.innerHTML;
+
+               this.classList.add("vrt-header")});
+           });
+           //select all cells except first row and except first two columns
+           aa.find("tbody > tr").not(":first").find("td").not("td[id^=sjs-A]").not("td[id^=sjs-B]").each(function(){
+             var cellValue = this.innerHTML;
+             this.innerHTML = "<select class=\"form-control\"><option></option><option>X</option></select>";
+             {#this.find("select").val(cellValue);#}
+             $(this).find('select').val(cellValue);
+           });
+         }
+        );
+        $.when($('#user-data-input-sheet-10')[0].innerHTML = htmlStr_10).then(
+         function (a) {
+           $('#user-data-input-sheet-10 > table > tbody > tr:first').remove(); // remove sheet title in first row
+           $('#user-data-input-sheet-10 > table').each(function(){
+             // include in column C cells an input cell
+             $(this).find('td[id^="sjs-C"]').each(function(){
+               var cellValue = this.innerHTML;
+               this.innerHTML = "<input class=\"form-control\" value=\"" + cellValue + "\">"})
+           });
+         }
+        );
+      };
+		});
+
+
+		function demoInputCheck () {
+		  if($("#enter-sub-id").val() != "N4382AP-2"){
+
+      }
+    }
+		//Add Django template to options in order to include multiple choice field from excel with that in the template.
+    //Idea below. Note: this does not work since Django processes tags in the back-end. Task: write function that can dynamically add multiple choice fields.
+    //$('table').each(function(){
+    // $(this).find('td[id^="sjs-C17"]').each(function(){
+    //    this.innerHTML = "<select class=\"form-control\" multiple=\"multiple\" style=\"width: 100%;\">{\% include \"benchmarking/diversity\" \%}</select>"
+    //  })
+    //});
+
+    // If multiple choice fields in excel template are used. Task write script to add placeholders. Below static example shown.
+    //$('td[id^="sjs-C17"] select').select2(
+    //        {placeholder: ' Select'});
+
+</script>
+
+{% endblock %}
+

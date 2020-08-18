@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+
+{% block page-title %}Demonstration Tool{% endblock %}
+{% block page-subtitle %}MPC demonstration for the purpose of master thesis research on behalf of Masud Petronia{% endblock %}
+
+{% block content %}
+				<!-- MAIN CONTENT -->
+            <div class="row">
+
+              <div class="col-md-12">
+
+								<div class="panel">
+
+                  <!-- START HEADING -->
+                  <div class="project-heading">
+										<div class="row">
+											<div class="col-md-9">
+												<div class="media">
+													<div class="media-body">
+														<h2 class="project-title">Introduction to multi party computation </h2>
+													</div>
+												</div>
+											</div>
+{#											<div class="col-md-3 text-left">#}
+{#												<div class="cell">#}
+{#													<div class="main-info-item">#}
+{#														<span class="title">PROGRESS</span>#}
+{#														<div id="project-progress" class="progress progress-transparent custom-color-orange2">#}
+{#															<div class="progress-bar" data-transitiongoal="0" id="project-progress-value"></div>#}
+{#														</div>#}
+{#													</div>#}
+{#												</div>#}
+{#											</div>#}
+										</div>
+									</div>
+                  <!-- END HEADING -->
+
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-1">
+                      <div class="panel-body">
+                        <div class="project-info" id="demo-intro">
+                          <h3 class="info-heading">DESCRIPTION</h3>
+                          <p class="project-description">
+                            Welcome! This demonstration tool is built to guide you though the technological and business aspects of multi party computation (abbreviated herein as MPC).
+                            The tool is comprised of three modules.
+                            In the first module we will describe data sharing and the context in which MPC is discussed which is supply chain.
+                            In the second module we will describe the basics of MPC. After this module you should have a basic understanding of the MPC building blocks.
+                            In the third module we describe a specific use-case. The aim of this module is to show how MPC can be used in practice. A mock-up (not a real working application) is used to demonstrate the MPC application. It provides you with the look and feel of an MPC application.
+                            Please start by clicking on module 1 below.
+                          </p>
+                          <p>
+                            <small>Note: if your browser has default settings (javascript enabled), then you will be guided automatically through these modules.</small>
+                          </p>
+                        </div>
+                        <div class="project-info">
+                          <h3 class="info-heading">Modules</h3>
+                          <div class="panel-group project-accordion">
+                            <!-- project milestone -->
+                            <div class="panel project-milestone" id="complete-milestones">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a href="#collapse1" data-toggle="collapse" data-parent="#accordion" class="collapsed">
+                                    <span class="milestone-title">Module 1: Data sharing in supply chain</span>
+                                    <i class="fa fa-plus-circle toggle-icon" id="collapse-icon"></i>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapse1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                  <div class="milestone-section">
+                                    <h4 class="milestone-heading">DESCRIPTION</h4>
+                                  </div>
+                                  <div class="milestone-section">
+                                    <p class="milestone-description">In this first module we will describe data sharing and the context in which MPC is discussed which is supply chain.</p>
+                                  </div>
+                                  <a href="{% url 'demomodules:one' %}" class="btn btn-success">Go to module</a>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end project milestone -->
+
+                            <!-- project milestone -->
+                            <div class="panel project-milestone" id="complete-milestones">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a href="#collapse2" data-toggle="collapse" data-parent="#accordion" class="collapsed">
+                                    <span class="milestone-title">Module 2: MPC basics</span>
+                                    <i class="fa fa-plus-circle toggle-icon" id="collapse-icon"></i>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                  <div class="milestone-section">
+                                    <h4 class="milestone-heading">DESCRIPTION</h4>
+                                  </div>
+                                  <div class="milestone-section">
+                                    <p class="milestone-description">Audire saperet necessitatibus no eam. No impedit postulant scribentur quo. Choro quidam mel id, pri te brute velit propriae, et cum sint latine docendi. Cu sed mutat posidonium, et duo exerci graece. No aliquip lobortis sit. Alii rebum ei mei. Eu tollit putent has, consul impedit accusata quo ad, veri mazim has id. Tamquam vocibus oportere ex mei, oporteat convenire cotidieque eu eos.</p>
+                                  </div>
+                                  <a href="{% url 'demomodules:two' %}" class="btn btn-success">Go to module</a>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end project milestone -->
+
+                            <!-- project milestone -->
+                            <div class="panel project-milestone" id="complete-milestones">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a href="#collapse3" data-toggle="collapse" data-parent="#accordion" class="collapsed">
+                                    <span class="milestone-title">Module 3: MPC use case</span>
+                                    <i class="fa fa-plus-circle toggle-icon" id="collapse-icon"></i>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                  <div class="milestone-section">
+                                    <h4 class="milestone-heading">DESCRIPTION</h4>
+                                  </div>
+                                  <div class="milestone-section">
+                                    <p class="milestone-description">Audire saperet necessitatibus no eam. No impedit postulant scribentur quo. Choro quidam mel id, pri te brute velit propriae, et cum sint latine docendi. Cu sed mutat posidonium, et duo exerci graece. No aliquip lobortis sit. Alii rebum ei mei. Eu tollit putent has, consul impedit accusata quo ad, veri mazim has id. Tamquam vocibus oportere ex mei, oporteat convenire cotidieque eu eos.</p>
+                                  </div>
+                                  <a href="{% url 'demomodules:three' %}" class="btn btn-success">Go to module</a>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end project milestone -->
+
+                            <!-- project milestone -->
+                            <div class="panel project-milestone" id="complete-milestones">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a href="#collapse4" data-toggle="collapse" data-parent="#accordion" class="collapsed">
+                                    <span class="milestone-title">MPC application demonstration</span>
+                                    <i class="fa fa-plus-circle toggle-icon" id="collapse-icon"></i>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                  <div class="milestone-section">
+                                    <h4 class="milestone-heading">DESCRIPTION</h4>
+                                  </div>
+                                  <div class="milestone-section">
+                                    <p class="milestone-description">This module presents an MPC application based on the use-case presented in the previous module. Please read the information provided in this application demonstration. Click on button below to go to the application demonstration.</p>
+                                  </div>
+                                  <a href="{% url 'demomodules:four' %}" class="btn btn-success">Go to module</a>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end project milestone -->
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+								</div>
+
+							</div>
+
+						</div>
+	  <!-- END MAIN CONTENT -->
+{% endblock%}
+
+{% block js_script %}
+{#<script>#}
+{#		$(function()#}
+{#		{#}
+{#			// project progress#}
+{#			$('#project-progress .progress-bar').progressbar(#}
+{#			{#}
+{#				display_text: 'fill'#}
+{#			});#}
+{#			// accordion toggle collapse#}
+{#			$('.project-accordion [data-toggle="collapse"]').on('click', function()#}
+{#			{#}
+{#				$(this).find('.toggle-icon').toggleClass('fa-minus-circle fa-plus-circle');#}
+{#			});#}
+{#		});#}
+{#</script>#}
+
+		<script>
+    // Bootstrap tour
+			var tour = new Tour(
+			{
+				steps:
+        [
+				{
+					element: '#demo-intro',
+ 					backdrop: true,
+					placement: 'bottom',
+					title: 'Welcome to MPC demonstration tool ',
+					content: 'Let us take a minute to guide you through the features.',
+					{#onShow: function()#}
+					{#{#}
+					{#	var popupSound = new Audio();#}
+					{#	if (navigator.userAgent.match("Firefox/"))#}
+					{#	{#}
+					{#		popupSound.src = "assets/audio/popup.ogg";#}
+					{#	}#}
+					{#	else#}
+					{#	{#}
+					{#		popupSound.src = "assets/audio/popup.mp3";#}
+					{#	}#}
+					{#	// sound setting saved on localStorage as 0 or 1, by default sound on (null value on localStorage)#}
+					{#	$globalVolume = localStorage.getItem('global-volume');#}
+					{#	if (($globalVolume == null || $globalVolume == '1'))#}
+					{#	{#}
+					{#	popupSound.play();#}
+					{#	}#}
+					{#}#}
+				},
+				//{
+				//	element: '#project-progress',
+				//	title: 'Progress bar',
+				//	backdrop: true,
+        //  placement: 'left',
+				//	content: 'Here you can see your progress. The time to complete the demo is approximately 20 minutes'
+				//},
+				{
+					element: '#complete-milestones',
+					title: 'Modules',
+					backdrop: true,
+          placement: 'top',
+					content: 'Complete each module in order to proceed to the next'
+				},
+				{
+					element: '#complete-milestones',
+					title: 'Collapse button',
+					backdrop: true,
+          placement: 'bottom',
+					content: 'Click on the respective bar to view content'
+				},
+        {
+					element: '#go-back-home',
+					title: 'Home button',
+					backdrop: true,
+          placement: 'left',
+					content: 'When within a module you can click here to come back to this home page'
+				},
+        {#{#}
+				{#	element: '#log-out-button',#}
+				{#	title: 'Logout button',#}
+				{#	backdrop: true,#}
+        {#  placement: 'left',#}
+				{#	content: 'Please log out when finished'#}
+				{# },#}
+        ],
+				template: "<div class='popover tour'> " +
+					"<div class='arrow'></div> " +
+					"<h3 class='popover-title'></h3>" +
+					"<div class='popover-content'></div>" +
+					"<div class='popover-navigation'>" +
+					"<button class='btn btn-default btn-sm' data-role='prev'>« Prev</button>" +
+					"<button class='btn btn-primary btn-sm' data-role='next'>Next »</button>" +
+					"<button class='btn btn-default btn-sm' data-role='end'>End guide</button>" +
+					"</div>" +
+					"</div>",
+			});
+			tour.init();
+			tour.start();
+		</script>
+
+{#<script>#}
+{#function getCompletion() {#}
+{#  var decodedCookie = decodeURIComponent(document.cookie);#}
+{#  var ca = decodedCookie.split(';');#}
+{#  var completedmodules = {"mod-1":"0","mod-2":"0","mod-3":"0",};#}
+{#  var keys = Object.keys(completedmodules);#}
+{#  var completion = 0#}
+{##}
+{#  for(var i = 0; i <keys.length; i++) {#}
+{#    var key = keys[i];#}
+{#    for(var j = 0; j <ca.length; j++) {#}
+{#      if (ca[j].includes(key)){#}
+{#        completedmodules[key] = "1";#}
+{#      }#}
+{#    }#}
+{#  }#}
+{#  for(var k = 0; k <keys.length; k++) {#}
+{#    if (completedmodules[keys[k]] == 1) {#}
+{#        completion = completion + 100/keys.length#}
+{#    }#}
+{#  }#}
+{#  return completion.toString();#}
+{# }#}
+{##}
+{#document.onload(document.getElementById("project-progress-value").setAttribute("data-transitiongoal", getCompletion()));#}
+{##}
+{#window.addEventListener('load', (event) => {#}
+{#  $("#project-progress-value").attr("data-transitiongoal", getCompletion());#}
+{# });#}
+{#</script>#}
+{% endblock %}

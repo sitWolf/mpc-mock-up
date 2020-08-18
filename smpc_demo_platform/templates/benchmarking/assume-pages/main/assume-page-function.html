@@ -1,0 +1,26 @@
+{% extends "base_main.html" %}
+{% load static %}
+
+{% block html_class %}class="fullscreen-bg"{% endblock html_class %}
+
+{% block main_content %}
+
+  <div id="wrapper">
+			<div class="vertical-align-wrap">
+				<div class="vertical-align-middle">
+          <div class="col-md-10 col-md-offset-1 center-it">
+            <p class="lead"><h1>This page would have led you to the functions used for the computation</h1></p>
+            <p><h3>(Please assume that this page exists. Go back by clicking on button below)</h3></p>
+            <br>
+          </div>
+					<div class="col-md-6 col-md-offset-3">
+						<div class="left">
+							<div class="content">
+              <div class="text-center">{% block go-back-link %}{% endblock %}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock main_content %}

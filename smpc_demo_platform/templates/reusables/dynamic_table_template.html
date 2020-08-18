@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block add_css_dynamic_table %}
+<!-- EXTRA CSS_1 -->
+<link rel="stylesheet" href="{% static 'vendor/parsleyjs/css/parsley.css' %}">
+<link rel="stylesheet" href="{% static 'vendor/sweetalert2/sweetalert2.css' %}">
+<link rel="stylesheet" href="{% static 'css/selectize.default.css' %}">
+{% endblock add_css_dynamic_table %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+  {% block dynamic_table_content %}{% endblock %}
+{% endblock %}
+
+{% block js_script_dynamic_table %}
+  <script src="{% static 'vendor/datatables/js-main/jquery.dataTables.min.js' %}"></script>
+  <script src="{% static 'vendor/datatables/js-bootstrap/dataTables.bootstrap.min.js' %}"></script>
+  <script src="{% static 'vendor/datatables-colreorder/dataTables.colReorder.js' %}"></script>
+  <script src="{% static 'vendor/datatables-tabletools/js/dataTables.tableTools.js' %}"></script>
+	<script>
+		$(function()
+		{
+			// datatable column with reorder extension
+			$('#datatable-column-reorder').dataTable(
+			{
+				pagingType: "full_numbers",
+				sDom: "RC" +
+					"t" +
+					"<'row'<'col-sm-6'i><'col-sm-6'p>>",
+				colReorder: true,
+			});
+
+			// datatable with column filter enabled
+			var dtTable = $('#datatable-column-filter').DataTable(
+			{ // use DataTable, not dataTable
+				sDom: // redefine sDom without lengthChange and default search box
+					"t" +
+					"<'row'<'col-sm-6'i><'col-sm-6'p>>"
+			});
+			$('#datatable-column-filter thead').append('<tr class="row-filter"><th></th><th></th><th></th><th></th><th></th></tr>');
+			$('#datatable-column-filter thead .row-filter th').each(function()
+			{
+				$(this).html('<input type="text" class="form-control input-sm" placeholder="Search...">');
+			});
+			$('#datatable-column-filter .row-filter input').on('keyup change', function()
+			{
+				dtTable
+					.column($(this).parent().index() + ':visible')
+					.search(this.value)
+					.draw();
+			});
+
+			// datatable with paging options and live search
+			$('#featured-datatable').dataTable(
+			{
+				sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
+				"order": [[ 1, "desc" ]]
+			});
+
+			$('#featured-datatable-list-second-colum-decending-order').dataTable(
+			{
+				sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
+				"order": [[ 1, "desc" ]]
+			});
+
+			// datatable with export feature
+			var exportTable = $('#datatable-data-export').DataTable(
+			{
+				sDom: "T<'clearfix'>" +
+					"<'row'<'col-sm-6'l><'col-sm-6'f>r>" +
+					"t" +
+					"<'row'<'col-sm-6'i><'col-sm-6'p>>",
+				"tableTools":
+				{
+					"sSwfPath": "assets/vendor/datatables-tabletools/swf/copy_csv_xls_pdf.swf"
+				}
+			});
+
+			// datatable with scrolling
+			$('#datatable-basic-scrolling').dataTable(
+			{
+				scrollY: "300px",
+				scrollCollapse: true,
+				paging: false
+			});
+		});
+  </script>
+{% endblock js_script_dynamic_table %}

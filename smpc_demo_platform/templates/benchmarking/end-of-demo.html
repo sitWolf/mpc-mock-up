@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block breadcrumb %}/ Benchmarking{% endblock breadcrumb %}
+
+{% block page-title %}PEBE - Multi party Computation Benchmarking Application{% endblock %}
+{% block page-subtitle %}Supply Chain Distribution Center Data Submission{% endblock %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+  <div class="col-md-6 col-md-offset-3">
+    <h1><b>End of demo</b></h1>
+    <h3>You have reached the end of the demonstration. We would like to understand your perception on the tasks you just completed. Please proceed with the questionnaire. Do not forget to write down below code.</h3>
+    <br>
+    <h3>Your code is:</h3>
+    <p>(please write it down)</p>
+    <h1>{% block application-code %}{% endblock %}</h1>
+  </div>
+{% endblock%}

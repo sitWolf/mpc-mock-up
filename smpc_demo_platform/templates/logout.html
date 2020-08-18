@@ -1,0 +1,41 @@
+{% extends "base_main.html" %}
+{% load static %}
+
+{% block html_class %}class="fullscreen-bg"{% endblock html_class %}
+
+{% block main_content %}
+
+<div id="wrapper">
+			<div class="vertical-align-wrap">
+				<div class="vertical-align-middle">
+					<div class="auth-box ">
+						<div class="left">
+							<div class="content">
+								<div class="header">
+{#									<div class="logo text-center">#}
+{#                    <img src="{% static 'img/logo-base-color.svg' %}" alt="sitWolf portal" style='height: 35%; width: 35%;'>#}
+{#									</div>#}
+                  <div><p class="lead">Successfully logged out.</p></div>
+								</div>
+                <div>
+                  <div class="bottom">
+										<span class="helper-text"><i class="fa fa-lock"></i> <a href="{% url 'login-page' %}">Go back to login page</a></span>
+									</div>
+                </div>
+							</div>
+						</div>
+            <!--.auth-box .right .overlay-->
+						<div class="right" style="background-image:none;">
+							<div class="overlay"></div>
+							<div class="content text">
+								<h1 class="heading">sitWolf portal</h1>
+								<p>Diminishing Inventory Shrinkage</p>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{% endblock main_content %}

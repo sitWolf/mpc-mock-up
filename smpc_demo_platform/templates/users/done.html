@@ -1,0 +1,114 @@
+{% extends "account/base.html" %}
+{% load i18n compress %}
+{% load crispy_forms_tags %}
+
+
+{% block head_title %}{% trans "User Management" %}{% endblock %}
+
+{% block content %}
+
+{% csrf_token %}
+
+
+
+
+<div class="col-md-12">
+								<div class="panel">
+									<div class="panel-heading">
+										<h3 class="panel-title">Employees</h3>
+									</div>
+									<div class="panel-body">
+  <div class="col-md-4 col-sm-6">
+    <div class="widget widget-metric_1 animate">
+      <a href="{% url 'users:register' %}"><span class="icon-wrapper custom-bg-blue2"><i class="fa fa-user-plus"></i></span></a>
+      <div class="right">
+        <span class="value">Create Employee</i></span>
+        <span class="title">XX
+          <span class="change text-indicator-red">0</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <div class="widget widget-metric_1 animate">
+      <a href="{% url 'users:list' %}"><span class="icon-wrapper custom-bg-green"><i class="fa fa-users"></i></span></a>
+      <div class="right">
+        <span class="value">View Employees</i></span>
+        <span class="title">TOTAL EMPLOYEES
+          <span class="change text-indicator-red">0</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <div class="widget widget-metric_1 animate">
+      <a href="delete"><span class="icon-wrapper custom-bg-red"><i class="fa fa-user-minus"></i></span></a>
+      <div class="right">
+        <span class="value">Delete Employee</i></span>
+        <span class="title">TOTAL EMPLOYEES NOT IN SERVICE
+          <span class="change text-indicator-red">0</span>
+        </span>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-12">
+								<div class="panel">
+									<div class="panel-heading">
+										<h3 class="panel-title">External parties</h3>
+									</div>
+									<div class="panel-body">
+  <div class="col-md-4 col-sm-6">
+    <div class="widget widget-metric_1 animate">
+      <a href="{% url 'users:register' %}"><span class="icon-wrapper custom-bg-blue2"><i class="fa fa-user-plus"></i></span></a>
+      <div class="right">
+        <span class="value">Create User</i></span>
+        <span class="title">ACCOUNTLESS
+          <span class="change text-indicator-red">0</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <div class="widget widget-metric_1 animate">
+      <a href="{% url 'users:list' %}"><span class="icon-wrapper custom-bg-green"><i class="fa fa-users"></i></span></a>
+      <div class="right">
+        <span class="value">View Users</i></span>
+        <span class="title">TOTAL USERS
+          <span class="change text-indicator-red">0</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <div class="widget widget-metric_1 animate">
+      <a href="delete"><span class="icon-wrapper custom-bg-red"><i class="fa fa-user-minus"></i></span></a>
+      <div class="right">
+        <span class="value">Delete User</i></span>
+        <span class="title">TOTAL USERS
+          <span class="change text-indicator-red">0</span>
+        </span>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">-->
+  <!--{% csrf_token %}-->
+  <!--{{ form|crispy }}-->
+  <!--{% if redirect_field_value %}-->
+  <!--<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />-->
+  <!--{% endif %}-->
+  <!--<button class="btn btn-primary" type="submit">{% trans "Sign Up" %} &raquo;</button>-->
+<!--</form>-->
+
+{% endblock %}
+

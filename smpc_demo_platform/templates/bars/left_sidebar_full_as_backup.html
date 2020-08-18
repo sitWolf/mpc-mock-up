@@ -1,0 +1,149 @@
+<div id="sidebar-nav" class="sidebar" xmlns="http://www.w3.org/1999/html">
+  <nav>
+    <ul class="nav" id="sidebar-nav-menu">
+      <li class="menu-group">Supplements</li>
+      <li class="panel">
+      <li><a href="dashboard.html"><i class="ti-thought"></i> <span class="title">Ideenbus</span><span class="label label-success">2</span></a></li>
+      </li>
+      <li class="panel">
+        <li><a href="dashboard.html"><i class="ti-dashboard"></i> <span class="title">Dashboard</span></a></li>
+      </li>
+      <li class="panel">
+        <a href="#dashboards" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="active"><i class="ti-direction-alt"></i> <span class="title">Mijn overzicht</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <!--<div id="dashboards" class="collapse in">-->
+        <div id="dashboards" class="collapse ">
+          <ul class="submenu">
+            <!--<li><a href="index.html" class="active"></a></li>-->
+            <li><a href="dashboard2.html">Mijn Rooster</a></li>
+            <li><a href="dashboard2.html">Mijn Uren</a></li>
+            <li><a href="dashboard3.html">Mijn Performance</a></li>
+            <li><a href="dashboard4.html">Vakantie & ADV</a></li>
+            <li><a href="dashboard2.html">Mijn verzoeken<span class="badge">1</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="panel">
+        <a href="#forms" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-receipt"></i> <span class="title">Verzoeken</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <div id="forms" class="collapse ">
+          <ul class="submenu">
+            <li><a href="forms-inputs.html">Correcties urenbrieven</a></li>
+            <li><a href="forms-multiselect.html">Aanvragen verlof</a></li>
+            <li><a href="forms-multiselect.html">Andere</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="panel">
+        <a href="#appViews" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-layout-tab-window"></i> <span class="title">Resources</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <div id="appViews" class="collapse ">
+          <ul class="submenu">
+            <li><a href="{% url 'users:home' %}">Medewerkers</a></li>
+            <li><a href="{% url 'users:home' %}">Users</a></li>
+            <li><a href="appviews-inbox.html">Inbox <span class="badge">8</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="panel">
+        <a href="#tables" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-layout-grid2"></i> <span class="title">TempoTeam</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <div id="tables" class="collapse ">
+          <ul class="submenu">
+            <li><a href="tables-static.html">Static Tables</a></li>
+            <li><a href="tables-dynamic.html">Dynamic Tables</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="menu-group">Operations</li>
+      <li><a href="widgets.html"><i class="ti-widget"></i> <span class="title">Aansturing</span></a></li>
+      <li class="panel">
+        <a href="#subLayouts" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-calendar"></i> <span class="title">Planning</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <div id="subLayouts" class="collapse ">
+          <ul class="submenu">
+            <li><a href="layout-topnav.html">Team Leader</a></li>
+            <li><a href="layout-minified.html">Vaste Medewerkers</a></li>
+            <li><a href="layout-fullwidth.html">Uitzendkrachten</a></li>
+            <li><a href="layout-default.html">Overzicht</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="panel">
+        <a href="#charts" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-stats-up"></i> <span class="title">Performance</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <div id="charts" class="collapse ">
+          <ul class="submenu">
+            <li><a href="charts-chartist.html">Pickfouten</a></li>
+            <li><a href="charts-chartist.html">Orderpicken</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="panel">
+        <a href="#preparation" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-layout-tab-v"></i> <span class="title">Preparations</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <div id="preparation" class="collapse ">
+          <ul class="submenu">
+            <li><a href="charts-chartist.html">Bijzonderheden</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="panel">
+        <a href="#supplementaltools" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-hummer"></i> <span class="title">Tools</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <div id="supplementaltools" class="collapse ">
+          <ul class="submenu">
+            <li><a href="{% url 'breakage:instigator-list' %}">Breakage</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="widgets.html"><i class="ti-widget"></i> <span class="title">Portefeuille</span></a></li>
+      <li class="menu-group">Extra</li>
+      <li class="panel">
+        <a href="#configureren" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="active"><i class="ti-panel"></i> <span class="title">Configuraties</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <!--<div id="dashboards" class="collapse in">-->
+        <div id="configureren" class="collapse ">
+          <ul class="submenu">
+            <!--<li><a href="index.html" class="active"></a></li>-->
+            <li><a href="dashboard2.html">Taken</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="panel">
+        <a href="#subPages" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-files"></i> <span class="title">Informatie</span> <i class="icon-submenu ti-angle-left"></i></a>
+        <div id="subPages" class="collapse ">
+          <ul class="submenu">
+            <li><a href="page-profile.html">Pending Work</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="typography.html"><i class="ti-paragraph"></i> <span class="title">Handboeken</span></a></li>
+      <li class="panel">
+        <a href="#" data-toggle="collapse" data-target="#submenuDemo" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-menu"></i> <span class="title">Afspraken</span><i class="icon-submenu ti-angle-left"></i></a>
+        <div id="submenuDemo" class="collapse">
+          <ul class="submenu">
+            <li class="panel">
+              <a href="#" data-toggle="collapse" data-target="#submenuDemoLv2" class="collapsed">Submenu 1 <i class="icon-submenu ti-angle-left"></i></a>
+              <div id="submenuDemoLv2" class="collapse">
+                <ul class="submenu">
+                  <li><a href="#">Another menu level</a></li>
+                  <li><a href="#" class="active">Another menu level</a></li>
+                  <li><a href="#">Another menu level</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#">Submenu 2</a></li>
+            <li><a href="#">Submenu 3</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="panel">
+        <li><a href="dashboard.html"><i class="ti-bookmark"></i><span class="title">Externe Links</span></a></li>
+      </li>
+      <li class="panel">
+        <li><a href="dashboard.html"><i class="ti-user"></i><span class="title">Gebruikers</span></a></li>
+      </li>
+      <li class="panel">
+        <li><a href="dashboard.html"><i class="ti-wand"></i><span class="title">Authorisaties</span></a></li>
+      </li>
+    </ul>
+
+    <button type="button" class="btn-toggle-minified" title="Toggle Minified Menu">
+      <i class="ti-arrows-horizontal"></i>
+    </button>
+  </nav>
+</div>
+
+

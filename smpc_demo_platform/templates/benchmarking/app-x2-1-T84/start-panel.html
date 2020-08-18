@@ -1,0 +1,26 @@
+{% extends "benchmarking/start-panel-base.html" %}
+{% load static %}
+
+{% block panel-title %}Supply Chain Benchmarking Data Submission{% endblock %}
+{% block panel-sub-title %}{% endblock %}
+
+{% block page-content %}
+  <p>This platform uses a trusted third party (TTP) for secure data contribution. Your input will be used to compute <b>operational</b> performance metrics by comparing your data with data from other distribution centers also making use of this platform.</p>
+  <p><img class="centered-image-50" src="{% static 'img/benchmarking/cg-platform-process-stages.svg' %}" alt="platform data flow process"></p>
+  <br>
+  <p>Please be ensured that your input is kept confidential. The TTP is a trusted entity which provides secure processing of your data. Only the output of the computation is disclosed to you and other participants. The computation functions used for the analytics can be viewed <a href="{% url 'benchmarking:assume-page-function-3' %}">here</a>.</p>
+  <p>The complete data flow is shown in the illustration above. The steps performed here are uploading your input data, viewing your input data, and submitting your input data.</p>
+  <p>A template is available to make inputting your data more easy. The template can be downloaded by clicking on Download Template button below. The purpose of this template is to allow you to gather the input of the data offline and to allow you to keep your input data available on your local machine for later. This further explained under the second panel (view your input data).</p>
+  <p>
+    <a href="{% url 'benchmarking:assume-page-download-template-file-3' %}">
+      <button type="button" class="btn btn-success" >
+        <span class="sr-only tiny-font-size"></span><span style="margin-right: 10px">Download Template</span><i class="fa fa-download"></i>
+      </button>
+    </a>
+    <a href="{% url 'benchmarking:assume-page-guidelines-3' %}">
+      <button type="button" class="btn btn-primary">
+        <span class="sr-only tiny-font-size"></span><span style="margin-right: 10px">Download Template Input Guidelines</span><i class="fa fa-download"></i>
+      </button>
+    </a>
+  </p>
+{% endblock %}

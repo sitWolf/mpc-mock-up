@@ -1,0 +1,69 @@
+{% extends "demomodules/module-template.html" %}
+{% load static %}
+{% block page-title %}Fourth Module{% endblock %}
+{% block page-subtitle %}MPC application{% endblock %}
+{% block breadcrumb %}/ Module 4{% endblock breadcrumb %}
+
+{% block module-content %}
+  <p>For the use-case you are to take a persona. You are a regional improvement manager. You are responsible for the operational efficiency of the distribution center situated in Breda of her company headquartered in Rotterdam, the Netherlands. Her company is a well-known e-commerce player in the Netherlands and Belgium. </p>
+  <p>You are constantly faced with industry challenges. Recently the question is raised, whether the distribution centers can achieve full-scale same day delivery. Jane works closely with the strategy manager to provide clarity on this issue. They are primarily concerned with which operational changes are needed to attain same-day delivery, and more importantly how the whole industry performs with respect to the different solutions available.</p>
+  <p>The distributions centers make primarily use of labor for the order fulfilment process. You know of existence of many solutions offered on the market but have difficulties in understanding the operational and strategical benefits these solutions provide.</p>
+  <p>There is an MPC benchmarking application available for distribution centers. It allows businesses to follow trends in DCs in retail and e-commerce. The motivation behind the application is that multi party computation enables all data to be shared allowing a proper comparison. Using conventional solutions, the type of data required to provide meaningful insights raised confidentiality concerns that result in companies refraining from sharing data. The is because the data required cover internal labor and capital allocation and financial data. This information when disclosed can be used by competitors to exploit internal vulnerabilities. </p>
+  <p>The goal of the application is to enable corporate decision makers to become more proficient in assessing the value of efficiency-enhancing technologies; are better capable in identifying performance gaps, and; are better capable of re-engineering warehousing operations.</p>
+  <p>The distribution centers (as input parties) submit their input data. The input data covers productivity metrics of different warehouse operations (receiving, put-away, replenishment, picking, packing & customization, dispatch, and returns). Herein other dimensions are integrated consisting of labour and capital intensity (level of automation), machinery, warehouse space, technologies used, and equipment used. The MPC application computes several functions providing insights covering different dimensions of distribution centers. A partial example of the output provided is shown below:</p>
+  <div class="col-md-12">
+    <p><img class="centered-image-50" src="{% static 'img/modules/mpc-output-graph-web.svg' %}" alt="platform data flow process"></p>
+  </div>
+
+  <p>You requested the warehouse manager to provide the necessary data. They have filled in all data requested. (download clicking on download button below). Since you agreed to contribute your data you have been provided a submission ID and submission code. These codes provide you with access to submit data and also allow you to resubmit data up to the deadline</p>
+  <p>
+    <a href="{{ MEDIA_URL }}/documents/demo-user-input.xlsx" class="btn btn-primary"><span style="margin-right: 10px">Download completed template file</span><i class="fa fa-download"></i></a>
+  </p>
+  <p>The remaining step is for you to submit your data. Open the MPC application by clicking on button below and enter the information requested. Use the information listed below.</p>
+  <br>
+  <p>
+  <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-3">
+      <table class="table table-minimal">
+        <tbody>
+          <tr>
+            <td>SUBCB Submission ID</td>
+            <td>K6435-L</td>
+          </tr>
+          <tr>
+            <td>Participation code</td>
+            <td>#hKC@wET</td>
+          </tr>
+          <tr>
+            <td>DC location</td>
+            <td>Netherlands</td>
+          </tr>
+          <tr>
+            <td>Channel</td>
+            <td>e-commerce</td>
+          </tr>
+          <tr>
+            <td>Goods</td>
+            <td>Grocery</td>
+          </tr>
+          <tr>
+            <td>Goods diversity range</td>
+            <td>more than 2500</td>
+          </tr>
+          <tr>
+            <td>Market</td>
+            <td>Business to consumer</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </p>
+  <p>Note: this is a demonstration application. Several features, such as input validation to prevent incorrect input, have been disabled for practical reasons.</p>
+  <a href="{% url 'benchmarking:benchmark-home' %}" class="btn btn-primary">Go to MPC application</a>
+{% endblock %}
+
+{% block js_script %}
+{% endblock %}
+
+

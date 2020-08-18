@@ -1,0 +1,80 @@
+{% extends "benchmarking/panel-template-wo.html" %}
+{% load static %}
+{% block panel-title %}View your input data{% endblock %}
+{% block panel-sub-title %}
+  Your data will appear here after you drag/drop (or browse to find) your completed Excel template file above. The Excel template file has 10 worksheets. This is reflected below with 10 tabs (Sh. 1 tru Sh. 10). All input fields are highlighted yellow.
+  <div class="alert alert-info"><i class="fa fa-info-circle"></i> The purpose of this panel is to allow you to check the quality of your data before submitting it to the computation server. The is important because the quality of the output is determined by the quality of your input. Therefore we ask you to carefully go through your input. </div>
+  <div class="alert alert-info"><i class="fa fa-info-circle"></i> Your submission ID and participation code are only used to authenticate your submission (comparable to username and password). Without this information it is not possible to submit input data. The other input fields (location, channel, etc.) make part of your input data.</div>
+
+  {#  <p><span class="label label-danger cell-width">Red cell</span> indicates an error. Click on the cell to see the error message.</p>#}
+{#  <p><span class="label label-warning cell-width">Yellow cell</span> indicates the value might be outside of the expected range. Please double-check to make sure the data is correct. You will still be able to submit your data.</p>#}
+{% endblock %}
+{% block custom-line %}{% endblock %}
+{% block page-content %}
+
+{#<div class="col-md-12">#}
+{#  <div class="project-accordion">#}
+{#    <p><span class="label label-danger cell-width">Red cell</span> indicates an error. Click on the cell to see the error message.</p>#}
+{#    <p><span class="label label-warning cell-width">Yellow cell</span> indicates the value might be outside of the expected range. Please double-check to make sure the data is correct. You will still be able to submit your data.</p>#}
+{#    {% include 'benchmarking/sheets/sheet-1.html' %}#}
+{#    {% include 'benchmarking/sheets/sheet-2.html' %}#}
+{#    {% include 'benchmarking/sheets/sheet-3.html' %}#}
+{#    {% include 'benchmarking/sheets/sheet-4.html' %}#}
+{#    {% include 'benchmarking/sheets/sheet-5.html' %}#}
+{#    {% include 'benchmarking/sheets/sheet-6.html' %}#}
+{#    {% include 'benchmarking/sheets/sheet-7.html' %}#}
+{#    {% include 'benchmarking/sheets/sheet-8.html' %}#}
+{#  </div>#}
+{#</div>#}
+
+                    <div class="user-input">
+										<!-- TABS WITH ICONS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="active"><a href="#sheet-1" role="tab" data-toggle="tab" aria-expanded="false">Sh. 1</a></li>
+											<li class=""><a href="#sheet-2" role="tab" data-toggle="tab" aria-expanded="false">Sh. 2</a></li>
+                      <li class=""><a href="#sheet-3" role="tab" data-toggle="tab" aria-expanded="false">Sh. 3</a></li>
+											<li class=""><a href="#sheet-4" role="tab" data-toggle="tab" aria-expanded="false">Sh. 4</a></li>
+											<li class=""><a href="#sheet-5" role="tab" data-toggle="tab" aria-expanded="false">Sh. 5</a></li>
+											<li class=""><a href="#sheet-6" role="tab" data-toggle="tab" aria-expanded="false">Sh. 6</a></li>
+											<li class=""><a href="#sheet-7" role="tab" data-toggle="tab" aria-expanded="false">Sh. 7</a></li>
+											<li class=""><a href="#sheet-8" role="tab" data-toggle="tab" aria-expanded="false">Sh. 8</a></li>
+                      <li class=""><a href="#sheet-9" role="tab" data-toggle="tab" aria-expanded="false">Sh. 9</a></li>
+                      <li class=""><a href="#sheet-10" role="tab" data-toggle="tab" aria-expanded="false">Sh. 10</a></li>
+										</ul>
+										<div class="tab-content">
+											<div class="tab-pane fade active in" id="sheet-1">
+												{% include 'benchmarking/sheets/sheet-1.html' %}
+                      </div>
+											<div class="tab-pane fade" id="sheet-2">
+												{% include 'benchmarking/sheets/sheet-2.html' %}
+											</div>
+                      <div class="tab-pane fade" id="sheet-3">
+												{% include 'benchmarking/sheets/sheet-3.html' %}
+											</div>
+                      <div class="tab-pane fade" id="sheet-4">
+												{% include 'benchmarking/sheets/sheet-4.html' %}
+											</div>
+                      <div class="tab-pane fade" id="sheet-5">
+												{% include 'benchmarking/sheets/sheet-5.html' %}
+											</div>
+                      <div class="tab-pane fade" id="sheet-6">
+												{% include 'benchmarking/sheets/sheet-6.html' %}
+											</div>
+                      <div class="tab-pane fade" id="sheet-7">
+												{% include 'benchmarking/sheets/sheet-7.html' %}
+											</div>
+                      <div class="tab-pane fade" id="sheet-8">
+												{% include 'benchmarking/sheets/sheet-8.html' %}
+											</div>
+                      <div class="tab-pane fade" id="sheet-9">
+												{% include 'benchmarking/sheets/sheet-9.html' %}
+											</div>
+                      <div class="tab-pane fade" id="sheet-10">
+												{% include 'benchmarking/sheets/sheet-10.html' %}
+											</div>
+										</div>
+  </div>
+										<!-- END TABS WITH ICONS -->
+{% endblock %}
+
+

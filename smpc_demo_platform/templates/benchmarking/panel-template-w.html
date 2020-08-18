@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-8 info-panel-left">
+    <div class="panel">
+      <div class="project-heading">
+        <div class="row">
+          <div class="col-md-12 {% block custom-line %}custom-tabs-line{% endblock %}">
+            <div class="media">
+              <div class="media-body">
+                <h1>{% block panel-title %}{% endblock %}</h1>
+                <p class="panel-subtitle">{% block panel-sub-title %}{% endblock %}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <br>
+            {% block page-content-left %}{% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 info-panel-right">
+    <div class="panel">
+      <div class="project-heading">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="media">
+{#                <div class="media-body">#}
+{#                  <h1>{% block panel-title %}{% endblock %}</h1>#}
+{#                  <p class="panel-subtitle">{% block panel-sub-title %}{% endblock %}</p>#}
+{#                </div>#}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <br>
+            {% block page-content-right %}{% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

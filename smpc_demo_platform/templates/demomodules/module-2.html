@@ -1,0 +1,29 @@
+{% extends "demomodules/module-template.html" %}
+
+{% block page-title %}Second Module{% endblock %}
+{% block page-subtitle %}Multi party computation fundamentals{% endblock %}
+{% block breadcrumb %}/ Module 2{% endblock breadcrumb %}
+
+{% block video %}<source src="{{ MEDIA_URL }}mod_2.mp4" type='video/mp4'>{% endblock %}
+
+{% block js_script %}
+  {{ block.super }}
+    <script>
+      function finished () {
+				swal(
+					'Module finished',
+					'Continue with next module',
+					'success'
+				).then(function() {
+          window.location = "3";
+        }).catch(swal.noop);
+			}
+		</script>
+    <script type='text/javascript'>
+    document.getElementById('module-video').addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+        finished ();
+        {#setCookie ("mod-2","1");#}
+    }
+    </script>
+{% endblock %}

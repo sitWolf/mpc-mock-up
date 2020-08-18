@@ -1,0 +1,40 @@
+{% extends "benchmarking/benchmarking-home-base.html" %}
+{% load static %}
+{% block breadcrumb %}/ Benchmarking{% endblock breadcrumb %}
+
+{% block page-title %}PEBE - Benchmarking Application{% endblock %}
+{% block page-subtitle %}Supply Chain Distribution Center Data Submission{% endblock %}
+
+{% block content %}
+{% include "benchmarking/app-x1-2-X82/start-panel.html" %}
+{% include "benchmarking/app-x1-2-X82/input-panel.html" %}
+{% include "benchmarking/app-x1-2-X82/review-data-panel.html" %}
+{% include "benchmarking/app-x1-2-X82/submit-data-panel.html" %}
+{% endblock%}
+
+{% block js_script_completed_demo %}
+<script>
+  $('#btn-sw-confirmation').on('click', function()
+  {
+    swal({
+        title: 'Confidential data contribution',
+        text: "Do you confirm that your input is correct?",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#41B314',
+        cancelButtonColor: '#F9354C',
+        confirmButtonText: 'Yes, upload!',
+        cancelButtonText: 'No, go back'
+      }).then(function()
+      {
+        swal(
+          'Uploaded!',
+          'Your input is uploaded.',
+          'success'
+        ).then(function() {
+          window.location = "X82/end-of-demo";
+        });
+      }).catch(swal.noop);
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "demomodules/module-template.html" %}
+
+{% block page-title %}Third Module{% endblock %}
+{% block page-subtitle %}Supply chain use-case{% endblock %}
+{% block breadcrumb %}/ Module 3{% endblock breadcrumb %}
+
+{% block video %}<source src="{{ MEDIA_URL }}mod_2.mp4" type='video/mp4'>{% endblock %}
+
+{% block js_script %}
+  {{ block.super }}
+    <script>
+      function finished () {
+				swal(
+					'Module finished',
+					'An MPC application demonstration is given next',
+					'success'
+				).then(function() {
+          window.location = "../../benchmarking/";
+        }).catch(swal.noop);
+			}
+		</script>
+    <script type='text/javascript'>
+    document.getElementById('module-video').addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+        finished ();
+        {#setCookie ("mod-3","1");#}
+    }
+    </script>
+{% endblock %}

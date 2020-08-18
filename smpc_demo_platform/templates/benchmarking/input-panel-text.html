@@ -1,0 +1,65 @@
+  <div class="col-md-7">
+    <form class="form-horizontal" role="form">
+      <fieldset>
+        <div class="form-group">
+          <label for="enter-sub-id" class="col-sm-3 control-label">ID</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="enter-sub-id" placeholder="SUPCB 2020 Submission ID">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="enter-sub-code" class="col-sm-3 control-label">Code</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" id="enter-sub-code" placeholder="Participation code">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="select-country" class="col-sm-3 control-label">Location</label>
+          <div class="col-sm-9">
+            <select id="select-country" name="country" style="width: 100%;">
+              {% include "benchmarking/options/countries.html" %}
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="select-channel" class="col-sm-3 control-label">Channel</label>
+          <div class="col-sm-9">
+            <select id="select-channel" multiple="multiple" style="width: 100%;">
+              {% include "benchmarking/options/channel.html" %}
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="select-goods-distributed" class="col-sm-3 control-label">Goods</label>
+          <div class="col-sm-9">
+            <select id="select-goods-distributed" multiple="multiple" style="width: 100%;">
+              {% include "benchmarking/options/goods.html" %}
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="select-diversity" class="col-sm-3 control-label">Diversity</label>
+          <div class="col-sm-9">
+            <select id="select-diversity" name="country" style="width: 100%;">
+              {% include "benchmarking/options/diversity.html" %}
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="select-market" class="col-sm-3 control-label">Market</label>
+          <div class="col-sm-9">
+            <select id="select-market" name="country" multiple="multiple" style="width: 100%;">
+              {% include "benchmarking/options/market.html" %}
+            </select>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div class="col-md-5">
+    <div class="row">
+      <div class="col-md-12">
+        <input type="file" class="dropify-custom" data-allowed-file-extensions="xls xlsx" id="excel-input-data">
+      </div>
+    </div>
+  </div>

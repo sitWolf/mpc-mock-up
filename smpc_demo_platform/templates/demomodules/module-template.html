@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page-title %}{% endblock %}
+{% block page-subtitle %}{% endblock %}
+{% block breadcrumb %}{% endblock breadcrumb %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel">
+        <!-- START HEADING -->
+        <div class="project-heading">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="media">
+                <div class="media-body">
+                  <div class="col-xs-12 col-md-12">
+                    {% block module-content %}
+{#                    <video class="centered-video" id="module-video" controls controlsList="nodownload" oncontextmenu="return false;">#}
+{#                      {% block video %}{% endblock %}#}
+{#                      Your browser does not support videos.#}
+{#                    </video>#}
+{#                      <iframe src="https://player.vimeo.com/video/434435236" width="1280" height="720" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>#}
+                      <div class="iframe-container">
+                        <iframe class="responsive-iframe"  src="https://player.vimeo.com/video/434435236" width="1280" height="720" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                      </div>
+                    {% endblock %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END HEADING -->
+  </div>
+{% endblock%}
+
+{% block js_script %}
+  <script src="{% static 'vendor/sweetalert2/sweetalert2.js' %}"></script>
+{#  <script>#}
+{#  function setCookie(module,state) {#}
+{#  document.cookie = module + "=" + state + ";" + ";path=/";#}
+{#  }#}
+{#  </script>#}
+{##}
+{#  <script>#}
+{#  $(document).ready(function(){#}
+{#   $('#module-video').bind('contextmenu',function() { return false; });#}
+{#  });#}
+{#  </script>#}
+{% endblock %}

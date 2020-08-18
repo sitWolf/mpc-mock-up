@@ -1,0 +1,27 @@
+{% extends "base_main.html" %}
+{% load static %}
+
+{% block html_class %}class="fullscreen-bg"{% endblock html_class %}
+
+{% block main_content %}
+
+  <div id="wrapper">
+			<div class="vertical-align-wrap">
+				<div class="vertical-align-middle">
+          <div class="col-md-10 col-md-offset-1 center-it">
+            <p class="lead"><h1>Download input file</h1></p>
+            <p><h5>(Save the file to an easily accessible location, such as your desktop)</h5></p>
+            <br>
+          </div>
+
+					<div class="col-md-6 col-md-offset-3">
+						<div class="left">
+							<div class="content">
+              <div class="text-center"><a href="{% static 'media/documents/demo-user-input.xlsx' %}" class="btn btn-primary">Download</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock main_content %}
