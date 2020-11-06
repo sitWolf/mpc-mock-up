@@ -22,7 +22,7 @@ This repository contains resources part of master thesis research conducted by M
 $ pip install -r requirements/local.txt
 ```
 
-- Include own stylesheets or include Klorofil stylesheets (CSS, JS, etc) (recommended). The klorofil files can be found [HERE](https://www.themeineed.com/downloads/klorofil-free-bootstrap-admin-template/). For more information, please send an email to masud.petronia@gmail.com
+- Include own stylesheets or include Klorofil stylesheets (CSS, JS, etc) (recommended). The klorofil files can be found [HERE](https://www.themeineed.com/downloads/klorofil-free-bootstrap-admin-template/). See overview of static files to be included in sitWolf/mpc-mock-up/smpc_demo_platform/templates/base_main.html. For more information, please send an email to masud.petronia@gmail.com
 - Run the application:
 
 ```bash
