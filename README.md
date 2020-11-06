@@ -22,8 +22,8 @@ This repository contains resources part of master thesis research conducted by M
 $ pip install -r requirements/local.txt
 ```
 
-- Include stylesheets (CSS, JS, etc). Request access via masud.petronia@gmail.com
-- Run application:
+- Include stylesheets (CSS, JS, etc). For the original stylesheets, request access via masud.petronia@gmail.com
+- Run the application:
 
 ```bash
 $ python manage.py runserver
