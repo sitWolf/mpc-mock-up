@@ -29,9 +29,13 @@ $ pip install -r requirements/local.txt
 $ python manage.py runserver
 ```
 
-## Environment variables
+## Deployment
 
-These are common between environments. The `ENVIRONMENT` variable loads the correct settings, possible values are: `DEVELOPMENT`, `STAGING`, `PRODUCTION`.
+It is possible to deploy to Heroku or to your own server.
+
+## Deployment Environment variables
+
+The variables are common between environments. The `ENVIRONMENT` variable loads the correct settings, possible values are: `DEVELOPMENT`, `STAGING`, `PRODUCTION`.
 
 ```
 ENVIRONMENT='DEVELOPMENT'
@@ -69,10 +73,6 @@ PYTHONHASHSEED = 'random'
 REDIS_URL = 'redis://redis:6379/0'
 WEB_CONCURRENCY = '4'
 ```
-
-## Deployment
-
-It is possible to deploy to Heroku or to your own server.
 
 ### Heroku
 
