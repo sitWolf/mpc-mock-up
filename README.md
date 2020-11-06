@@ -113,4 +113,4 @@ SOFTWARE.
 
 ## Funding
 
-The development of this mockup has received funding from the European Union’s Horizon 2020 Research and Innovation Programme, under Grant Agreement no 825225 – Safe Data Enabled Economic Development [SAFE-DEED](https://safe-deed.eu/), from the H2020-ICT-2018-2 Call. 
+The development of this mockup has received funding from the European Union’s Horizon 2020 Research and Innovation Programme, under Grant Agreement no 825225 – Safe Data Enabled Economic Development [(SAFE-DEED)](https://safe-deed.eu/), from the H2020-ICT-2018-2 Call. 
