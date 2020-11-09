@@ -1,4 +1,4 @@
-# petronia-mpc-mock-up
+# mpc-mock-up
 This repository contains resources part of master thesis research conducted by M. Petronia at Delft Technical University. The thesis can be viewed [HERE](https://repository.tudelft.nl/islandora/object/uuid%3Ab0de4a4b-f5a3-44b8-baa4-a6416cebe26f?collection=education).
 
 ## Features
