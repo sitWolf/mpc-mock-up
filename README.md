@@ -43,7 +43,7 @@ DJANGO_SECRET_KEY='dont-tell-eve'
 DJANGO_DEBUG='yes'
 ```
 
-These settings(and their default values) are only used on staging and production environments.
+These settings (and their default values) are only used on staging and production environments.
 
 ```
 DJANGO_SESSION_COOKIE_SECURE='yes'
